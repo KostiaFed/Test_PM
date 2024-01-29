@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: myuser
+  password: 12345678
+  host: localhost
+
+development:
+  <<: *default
+  database: pmdb_development
+
+test:
+  <<: *default
+  database: pmdb_test
+
+staging:
+  <<: *default
+  database: pmdb_staging
+
+production:
+  <<: *default
+  database: pmdb
